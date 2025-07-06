@@ -24,5 +24,5 @@ def calculate_square(number: float) -> float:
 if __name__ == "__main__":
     # Get port from environment variable (Render sets this automatically)
     port = int(os.environ.get("PORT", 8000))
-    # Bind to 0.0.0.0 to accept external connections
-    mcp.run(host="0.0.0.0", port=port)
+    # Use HTTP transport for web deployment
+    mcp.run(transport="http", host="0.0.0.0", port=port)
